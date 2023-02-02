@@ -18,5 +18,5 @@ public class ToyEntity {
     private String description;
     private double price;
     private String color;
-    private String age;
+    private int age;
 }

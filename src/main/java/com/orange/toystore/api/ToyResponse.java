@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 public class ToyResponse {
     private Long id;
     private String name;
-    private String desc;
+    private String description;
     private double price;
     private String color;
-    private String age;
+    private int age;
 }

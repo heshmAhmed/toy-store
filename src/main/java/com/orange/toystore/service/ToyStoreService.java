@@ -35,7 +35,7 @@ public class ToyStoreService {
        toyEntity.setColor(toyPutRequest.getColor());
        toyEntity.setAge(toyPutRequest.getAge());
        toyEntity.setName(toyPutRequest.getName());
-       toyEntity.setDescription(toyPutRequest.getDesc());
+       toyEntity.setDescription(toyPutRequest.getDescription());
 
        toyRepository.save(toyEntity);
        return mapper.toyEntityToToyResponse(toyEntity);

@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Toy {
     private String name;
-    private String desc;
+    private String description;
     private double price;
     private String color;
-    private String age;
+    private int age;
 }

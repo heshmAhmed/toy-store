@@ -11,7 +11,7 @@ public class ToyMapper {
         ToyEntity toyEntity = new ToyEntity();
         toyEntity.setName(toy.getName());
         toyEntity.setAge(toy.getAge());
-        toyEntity.setDescription(toy.getDesc());
+        toyEntity.setDescription(toy.getDescription());
         toyEntity.setColor(toy.getColor());
         toyEntity.setPrice(toy.getPrice());
         return toyEntity;
@@ -22,7 +22,7 @@ public class ToyMapper {
         toyResponse.setAge(toyEntity.getAge());
         toyResponse.setPrice(toyEntity.getPrice());
         toyResponse.setName(toyEntity.getName());
-        toyResponse.setDesc(toyEntity.getDescription());
+        toyResponse.setDescription(toyEntity.getDescription());
         toyResponse.setColor(toyEntity.getColor());
         return toyResponse;
     }
