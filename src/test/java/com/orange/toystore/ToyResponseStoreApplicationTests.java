@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.orange.toystore.api.Toy;
 import com.orange.toystore.api.ToyPutRequest;
 import com.orange.toystore.api.ToyResponse;
+import com.orange.toystore.persistance.ToyEntity;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,12 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -90,6 +95,19 @@ class ToyResponseStoreApplicationTests {
 				.andExpect(content().json(ow.writeValueAsString(toys)))
 				.andReturn();
 
+	}
+
+	@Test
+	@Sql(statements = "INSERT INTO toys(id, age, color, description, name, price) VALUES (1, 18, 'color', 'desc', 'name', 20)"
+			, executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
+	public void testDeleteToyEndpoint() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.delete(url + "/1"))
+				.andExpect(status().isAccepted())
+				.andReturn();
+
+		Optional<ToyEntity> toyEntity = repository.findById(1L);
+
+		assertTrue(toyEntity.isEmpty());
 	}
 
 
