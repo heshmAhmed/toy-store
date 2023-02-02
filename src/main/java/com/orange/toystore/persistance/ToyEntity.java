@@ -1,4 +1,4 @@
-package com.orange.toystore;
+package com.orange.toystore.persistance;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

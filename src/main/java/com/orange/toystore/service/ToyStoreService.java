@@ -1,5 +1,11 @@
-package com.orange.toystore;
+package com.orange.toystore.service;
 
+import com.orange.toystore.api.Toy;
+import com.orange.toystore.api.ToyPutRequest;
+import com.orange.toystore.api.ToyResponse;
+import com.orange.toystore.persistance.ToyEntity;
+import com.orange.toystore.persistance.ToyRepository;
+import com.orange.toystore.util.ToyMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;

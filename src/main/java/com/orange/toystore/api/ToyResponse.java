@@ -1,13 +1,13 @@
-package com.orange.toystore;
+package com.orange.toystore.api;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ToyPutRequest {
+@Data
+public class ToyResponse {
     private Long id;
     private String name;
     private String desc;
